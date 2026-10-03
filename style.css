@@ -52,8 +52,8 @@ button img{pointer-events:none}#controls button.pressed{background:#987a24c9;bor
 @media(max-height:540px) and (orientation:landscape){#mainMenu .rm-menu{width:54%;bottom:var(--safe-b)}#mainMenu .menu-grid{gap:5px}#mainMenu .menu-grid button{min-height:44px}#mainMenu .menu-grid .menu-dolbogram{min-height:44px}.guide-coach{top:calc(var(--safe-t) + 58px);font-size:11px;padding:7px;max-height:38dvh}}
 @media(orientation:portrait){#mainMenu .rm-menu{top:calc(100vw * 941 / 1672 + 12px);bottom:auto;left:var(--safe-l);width:calc(100% - var(--safe-l) - var(--safe-r));padding-bottom:var(--safe-b)}.guide-coach{width:80vw}.feature-coach{width:80vw}}
 #mainMenu .menu-grid .menu-dolbogram{min-width:min(220px,100%);border-color:#e5bd64;background:#1c2445bd}#mainMenu .menu-dolbogram .dolbogram-logo{max-width:200px;height:30px}
-/* Thumb layout: brake left; handbrake directly above accelerator. */
-#controls{align-items:flex-end}#controls .steering-controls{align-items:flex-end;gap:8px}#controls .pedal-controls{display:flex;flex-direction:column;align-items:center;gap:8px}
+/* Right pedals: brake left of gas; handbrake directly above gas. */
+#controls{align-items:flex-end}#controls .steering-controls{align-items:flex-end;gap:8px}#controls .pedal-controls{display:grid;grid-template-columns:auto auto;align-items:end;gap:8px}#controls .pedal-controls #brake{grid-column:1;grid-row:2}#controls .pedal-controls #gas{grid-column:2;grid-row:2}#controls .pedal-controls #handbrake{grid-column:2;grid-row:1;justify-self:center}
 #controls #handbrake{align-self:center;width:clamp(72px,10vw,96px);height:50px;min-height:44px}
 #controls #brake{font-size:11px;width:clamp(66px,9vw,96px)}#controls #gas{font-size:15px}
 .track-carousel{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 18px;overscroll-behavior-x:contain;touch-action:pan-x pan-y}
