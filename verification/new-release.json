@@ -1,0 +1,10 @@
+{
+  "httpBasePath": "/RAREMASTERS-DRIFT-beta-2.0/",
+  "httpFiles": 419,
+  "literalAssetReferences": 100,
+  "missing": [],
+  "largest": "assets/audio/music/29.mp3",
+  "largestBytes": 6515593,
+  "totalBytes": 230707165,
+  "browserTest": false
+}

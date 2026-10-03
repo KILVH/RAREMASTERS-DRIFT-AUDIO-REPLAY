@@ -1,0 +1,20 @@
+[
+  {
+    "id": "green",
+    "count": 2,
+    "replayed": 2002,
+    "maxJump": 6.000054867421209,
+    "finished": true,
+    "loopRestarted": true,
+    "geometry": "real-map-mask"
+  },
+  {
+    "id": "shop",
+    "count": 2,
+    "replayed": 2289,
+    "maxJump": 6.520154025293189,
+    "finished": true,
+    "loopRestarted": true,
+    "geometry": "synthetic-clear-road"
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "name": "raremasters-drift-audio-replay",
+  "version": "2.1.0",
+  "private": true,
+  "description": "Static Canvas drift game with mobile audio and NPC recording",
+  "scripts": {
+    "test": "node qa-tests/test-audio-manager.cjs && node qa-tests/test-npc-replay.cjs && node qa-tests/test-replay-dev-controls.cjs && node qa-tests/test-audio-replay-systems.cjs && node qa-tests/test-mobile-ui.cjs && node qa-tests/test-mobile-physics.cjs && node qa-tests/test-mobile-edge.cjs && node qa-tests/test-new-ai.cjs && node qa-tests/test-training-rotation.cjs && node qa-tests/test-new-collisions.cjs && node qa-tests/test-final-police.cjs && node qa-tests/test-new-tandem.cjs && node qa-tests/test-replay-safety.cjs"
+  }
+}

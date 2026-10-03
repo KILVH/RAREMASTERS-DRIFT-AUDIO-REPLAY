@@ -1,0 +1,10 @@
+{
+  "httpBasePath": "/RAREMASTERS-DRIFT-GAME-MOBILE/",
+  "httpFiles": 422,
+  "literalAssetReferences": 78,
+  "missing": [],
+  "largest": "assets/audio/music/29.mp3",
+  "largestBytes": 6515593,
+  "totalBytes": 230714036,
+  "browserTest": false
+}

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>RAREMASTERS DRIFT</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#080808;font-family:Arial,sans-serif;color:#fff}
+button{font:inherit;cursor:pointer}
+.screen{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:#080808;z-index:20}
+.screen.active{display:flex}
+.menu{width:min(900px,92vw);text-align:center}
+.title{font-size:clamp(48px,9vw,100px);font-weight:900;letter-spacing:6px;margin-bottom:50px}
+.subtitle{opacity:.65;font-size:18px;margin-top:-35px;margin-bottom:40px}
+.menuBtn{display:block;width:min(520px,90vw);margin:14px auto;padding:20px 30px;border:1px solid #555;border-radius:14px;background:#181818;color:#fff;font-weight:800;font-size:22px}
+.menuBtn:hover{background:#292929}
+.menuBtn.secondary{font-size:17px;padding:15px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin:30px 0}
+.card{border:1px solid #555;border-radius:16px;background:#151515;padding:20px;text-align:left}
+.card h2{margin:0 0 8px}.card p{opacity:.6;margin:0 0 18px}.card button{width:100%;padding:13px;border:0;border-radius:10px;background:#fff;color:#000;font-weight:800}
+#game{position:fixed;inset:0;display:none;background:#000}
+#game.active{display:block}
+#hud{position:fixed;top:16px;left:16px;z-index:8;pointer-events:none;text-shadow:0 2px 5px #000}
+#hud .big{font-size:30px;font-weight:900}
+#hud .line{font-size:16px;margin-top:5px}
+#compHud{position:fixed;top:16px;right:16px;z-index:8;text-align:right;pointer-events:none;text-shadow:0 2px 5px #000}
+#compHud .big{font-size:30px;font-weight:900}
+#compHud .cp{font-size:18px;margin-top:6px}
+#controls{position:fixed;inset:auto 0 20px 0;z-index:10;display:none;justify-content:space-between;padding:0 20px;pointer-events:none}
+.controlGroup{display:flex;gap:12px;pointer-events:auto}
+.controlBtn{width:76px;height:76px;border:0;border-radius:20px;background:rgba(255,255,255,.23);color:#fff;font-size:28px;touch-action:none}
+#restartBtn{position:fixed;left:50%;top:55%;transform:translate(-50%,-50%);z-index:15;display:none;padding:18px 30px;border:0;border-radius:12px;font-weight:900}
+#topGameBtns{position:fixed;right:16px;bottom:16px;z-index:12;display:none;gap:10px}
+.smallBtn{border:1px solid #777;border-radius:10px;background:rgba(0,0,0,.7);color:#fff;padding:10px 14px}
+#splash{position:fixed;inset:0;display:none;z-index:30;background:#000;align-items:center;justify-content:center}
+#splash.active{display:flex}
+#splash img{width:100%;height:100%;object-fit:cover}
+#countdown{position:fixed;inset:0;display:none;z-index:35;align-items:center;justify-content:center;font-size:clamp(100px,25vw,280px);font-weight:900;text-shadow:0 5px 20px #000}
+#result .resultBox{width:min(650px,90vw);padding:35px;border:1px solid #555;border-radius:18px;background:#151515;text-align:center}
+#resultScore{font-size:48px;font-weight:900;margin:15px}
+#resultStats{text-align:left;line-height:1.8;opacity:.85}
+#loading{position:fixed;inset:0;display:none;z-index:40;background:#000;align-items:center;justify-content:center;font-size:24px}
+#loading.active{display:flex}
+
+.imageScreen{
+  background-color:#080808;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+.mainBg{background-image:url("menu/outfit-0.webp")}
+.legalBg{background-image:url("menu/legal_menu.webp")}
+.illegalBg{background-image:url("menu/illegal_menu.webp")}
+.menuOverlay{position:absolute;inset:0;pointer-events:none}
+.imageButton{
+  position:absolute;
+  pointer-events:auto;
+  border:3px solid #f2b400;
+  border-radius:18px;
+  background:rgba(18,8,35,.88);
+  color:#fff;
+  font-family:Arial,sans-serif;
+  font-weight:900;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  text-shadow:2px 2px 0 #000;
+  box-shadow:0 5px 0 #111, inset 0 0 0 2px rgba(255,255,255,.08);
+  transition:transform .12s, filter .12s;
+}
+.imageButton:hover{transform:translateY(-2px);filter:brightness(1.15)}
+.imageButton:active{transform:translateY(2px);box-shadow:0 2px 0 #111}
+.legalMainBtn,.illegalMainBtn{
+  left:7%;
+  width:min(330px,31vw);
+  height:min(82px,8vw);
+  font-size:clamp(22px,2.4vw,38px);
+}
+.legalMainBtn{top:62%;border-color:#f2b400}
+.illegalMainBtn{top:73%;border-color:#d63a2f}
+.legalButtons .imageButton{
+  top:76%;
+  height:min(112px,12vw);
+  width:min(680px,42vw);
+  font-size:clamp(24px,2.6vw,42px);
+}
+.trainingBtn{left:5%}
+.competitionBtn{right:5%;border-color:#d63a2f}
+.illegalButtons .imageButton{
+  left:20%;
+  bottom:5%;
+  width:60%;
+  height:min(105px,12vw);
+  font-size:clamp(26px,3vw,48px);
+}
+@media (max-width:700px){
+  .legalMainBtn,.illegalMainBtn{width:43vw;height:11vw}
+  .legalMainBtn{top:61%}.illegalMainBtn{top:74%}
+  .legalButtons .imageButton{top:77%;width:44vw;height:12vw}
+  .trainingBtn{left:4%}.competitionBtn{right:4%}
+  .illegalButtons .imageButton{left:15%;width:70%}
+}
+</style>
+
+<style id="mobile-controls-style">
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#000;overscroll-behavior:none;touch-action:none}
+#mobileRotate{display:none;position:fixed;inset:0;z-index:99999;background:#090909;color:#fff;align-items:center;justify-content:center;text-align:center;font-family:Arial,sans-serif}
+#mobileRotate .rotateBox{padding:24px;font-size:22px;font-weight:700}.mobileBtn{pointer-events:auto;position:absolute;user-select:none;-webkit-user-select:none;touch-action:none;border:2px solid rgba(255,255,255,.45);background:rgba(0,0,0,.42);color:#fff;border-radius:18px;font:700 18px Arial,sans-serif;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+#mobileControls{display:none;position:fixed;inset:0;z-index:50000;pointer-events:none}
+@media (orientation:portrait) and (max-width:1100px){#mobileRotate{display:flex}#game{visibility:hidden!important}}
+@media (orientation:landscape) and (max-width:1100px){#mobileControls{display:block}}
+#mobileLeft{left:18px;bottom:20px;width:76px;height:76px}#mobileRight{left:106px;bottom:20px;width:76px;height:76px}#mobileGas{right:18px;bottom:20px;width:100px;height:70px}#mobileBrake{right:130px;bottom:20px;width:100px;height:70px}
+#mobileFullscreen{right:18px;top:68px;width:138px;height:40px;font-size:13px}
+
+@media (orientation:landscape) and (max-width:1100px){
+  .screen.imageScreen{overflow:hidden}
+  .mainBg .legalMainBtn,.mainBg .illegalMainBtn{left:7%;width:38vw;height:54px;font-size:19px}
+  .mainBg .legalMainBtn{top:56%}.mainBg .illegalMainBtn{top:69%}
+  .legalBg .legalButtons .imageButton{left:7%;right:auto;width:40vw;height:54px;font-size:19px}
+  .legalBg .legalButtons .trainingBtn{top:56%}.legalBg .legalButtons .competitionBtn{top:69%;right:auto}
+  .illegalBg .illegalButtons .imageButton{left:7%;width:40vw;height:54px;bottom:8%;font-size:19px}
+  #result{padding:10px;align-items:center;justify-content:center;overflow:hidden}
+  #result .resultBox{width:min(88vw,500px);max-height:80dvh;overflow:auto;padding:16px;border-radius:14px}
+  #result .resultBox h1{font-size:clamp(23px,4.5vw,34px);margin:3px 0 7px}
+  #resultScore{font-size:clamp(40px,9vw,58px);margin:6px}
+  #resultStats{font-size:14px;line-height:1.45}
+  #result .menuBtn{width:100%;margin:6px 0;padding:12px 16px;font-size:17px}
+  #topGameBtns{right:auto;left:18px;top:18px;bottom:auto;z-index:60000}
+  #topGameBtns .smallBtn{padding:9px 13px;font-size:14px}
+}
+</style>
+
+<style id="spb-final-settings-css">
+@media (orientation:landscape) and (max-width:900px){
+#spbSettingsOpen{position:fixed;right:16px;top:16px;z-index:25000;padding:8px 11px;border:0;border-radius:10px;background:rgba(0,0,0,.68);color:#fff;font-weight:800;font-size:13px}
+#spbSettingsPanel{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:min(360px,78vw);padding:18px;border-radius:18px;background:rgba(12,12,15,.97);color:#fff;z-index:30000;font-family:Arial,sans-serif;text-align:center;box-shadow:0 12px 40px rgba(0,0,0,.6)}
+#spbSettingsPanel h2{margin:0 0 14px;font-size:23px}
+#spbSettingsPanel button{display:block;width:100%;margin:8px 0;padding:12px;border:0;border-radius:10px;font-weight:800;font-size:15px}
+#spbSettingsPanel .scaleRow{display:flex;gap:8px}
+#spbSettingsPanel .scaleRow button{flex:1}
+#spbScaleHud{position:fixed;right:16px;top:55px;z-index:24999;padding:5px 8px;border-radius:8px;background:rgba(0,0,0,.5);color:#fff;font:700 12px Arial}
+}
+</style>
+
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="icons/favicon-48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="RAREMASTERS">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#000000">
+
+<style id="raremasters-menu-buttons-fix">
+/* RAREMASTERS: компактнее кнопки выбора режима */
+@media (max-width: 900px) {
+  .mode-buttons,
+  .mode-buttons-container,
+  .menu-mode-buttons,
+  .mode-selection,
+  .menu-buttons {
+    transform: translateX(-4vw) scale(0.88);
+    transform-origin: left center;
+  }
+
+  .mode-buttons button,
+  .mode-buttons-container button,
+  .menu-mode-buttons button,
+  .mode-selection button,
+  .menu-buttons button {
+    transform: scale(0.92);
+  }
+}
+</style>
+
+<link rel="stylesheet" href="style.css?v=bcb771f370">
+</head>
+<body>
+
+<div id="mobileRotate"><div class="rotateBox"><span style="font-size:58px;display:block">📱↻</span>Поверни телефон горизонтально</div></div>
+<div id="mobileControls">
+<button class="mobileBtn" id="mobileLeft">◀</button><button class="mobileBtn" id="mobileRight">▶</button>
+<button class="mobileBtn" id="mobileBrake">ТОРМОЗ</button><button class="mobileBtn" id="mobileGas">ГАЗ</button>
+
+</div>
+
+
+
+
+<div id="mainMenu" class="screen active imageScreen mainBg">
+  <div class="menuOverlay">
+    <button class="imageButton legalMainBtn" onclick="showLegalMenu()">ЛЕГАЛ</button>
+    <button class="imageButton illegalMainBtn" onclick="showIllegalMenu()">НЕЛЕГАЛ</button>
+  </div>
+</div>
+
+<div id="legalMenu" class="screen imageScreen legalBg">
+  <div class="menuOverlay legalButtons">
+    <button class="imageButton trainingBtn" onclick="startLegal('training')">ТРЕНИРОВКА</button>
+    <button class="imageButton competitionBtn" onclick="startLegal('competition')">СОРЕВНОВАНИЯ</button>
+  </div>
+</div>
+
+<div id="illegalMenu" class="screen imageScreen illegalBg">
+  <div class="menuOverlay illegalButtons">
+    <button class="imageButton startIllegalBtn" onclick="startIllegal()">НАЧАТЬ</button>
+  </div>
+</div>
+
+<canvas id="game"></canvas>
+
+<div id="hud">
+  <div id="mapNameHud" class="big"></div>
+  <div id="modeHud" class="line"></div>
+  <div id="scoreHud" class="line"></div>
+  <div id="speedHud" class="line"></div>
+  <div id="angleHud" class="line"></div>
+  <div id="surfaceHud" class="line"></div>
+</div>
+
+<div id="compHud">
+  <div id="compScore" class="big"></div>
+  <div id="cpHud" class="cp"></div>
+  <div id="compDetails" class="cp"></div>
+</div>
+
+<div id="controls">
+  <div class="controlGroup steering-controls">
+    <button class="controlBtn" id="brake" aria-label="Тормоз">ТОРМОЗ</button>
+    <button class="controlBtn" id="left">◀</button>
+    <button class="controlBtn" id="right">▶</button>
+  </div>
+  <div class="controlGroup pedal-controls">
+    <button class="controlBtn" id="handbrake" aria-label="Ручник">РУЧНИК</button>
+    <button class="controlBtn" id="gas" aria-label="Газ">ГАЗ</button>
+  </div>
+</div>
+
+<div id="topGameBtns">
+  <button class="smallBtn" onclick="leaveGame()">Меню</button>
+</div>
+
+<button id="restartBtn" onclick="restartRun()">Новая попытка</button>
+
+<div id="splash"></div>
+<div id="countdown"></div>
+
+<div id="result" class="screen">
+  <div class="resultBox">
+    <h1>ЗАЕЗД ЗАВЕРШЁН</h1>
+    <div id="resultScore">0</div>
+    <div id="resultStats"></div>
+    <button class="menuBtn" onclick="restartRun()">ЕЩЁ РАЗ</button>
+    <button class="menuBtn secondary" onclick="leaveGame()">В МЕНЮ</button>
+  </div>
+</div>
+
+<div id="loading">Загрузка карты...</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="js/catalog.js?v=56d23fcb7c"></script>
+<script src="js/dynamics.js?v=62e1fbb7a1"></script>
+<script src="js/engine.js?v=e45ff9c504"></script>
+<script src="js/storage.js?v=1edb11c73b"></script>
+<script src="js/vehicles.js?v=62c0f0bda0"></script>
+<script src="js/world.js?v=cc55b2f1ec"></script>
+<script src="js/navigation.js?v=45e615c402"></script>
+<script src="js/traffic.js?v=37cb77c617"></script>
+<script src="js/city.js?v=fa44118280"></script>
+<script src="js/replay.js?v=9677a64b94"></script>
+<script src="js/audio-manager.js?v=a2a9b56094"></script>
+<script src="js/audio.js?v=b1c7fda04b"></script>
+<script src="js/ui.js?v=9d63985dee"></script>
+<script src="js/tandem.js?v=682e104d65"></script>
+<script src="js/runtime.js?v=41ce075acb"></script>
+<script src="js/pursuit.js?v=3840d38441"></script>
+<script src="js/social.js?v=ad2b7bfe94"></script>
+<script src="js/npc-replay.js?v=854e45ef91"></script>
+<script src="js/integration.js?v=c02ab4e369"></script>
+
+
+
+<script src="js/developer.js?v=5d0a43bab5"></script>
+<script src="js/guide.js?v=7561dff219"></script>
+</body>
+</html>

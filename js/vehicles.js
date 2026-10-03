@@ -1,0 +1,11 @@
+/* Individual proportion-preserving assets, loaded on demand. */
+const Vehicles={cache:new Map(),
+ visualScale(){return (gameType==='illegal'?1.38:1.27)*(['shop','eco'].includes(selectedMapId)?1.16:1);},
+ current(){return CATALOG.cars.find(c=>c.id===Save.state.selected)||CATALOG.cars[0];},
+ image(def,type='top',custom={}){const id=def.police?'police'+def.police:def.id==='baseline'?'rare':def.id;if(['baseline','rare','silvia'].includes(def.id)&&custom.paint>=2){const suffix=type==='preview'?`p${custom.paint}-r${custom.rims||0}-a${custom.aero||0}-preview`:`p${custom.paint}-a${custom.aero||0}-top`;const url=`assets/cars/${id}-${suffix}.webp`;if(!this.cache.has(url)){const im=AssetImages.image(url);this.cache.set(url,im);}return this.cache.get(url);}const code=[custom.paint?1:0,custom.rims?1:0,custom.aero?1:0].join('');const previewCodes={'000':'','100':'-street','011':'-track'};const edition=type==='preview'?(previewCodes[code]??'-'+code):(custom.aero?(custom.paint?'-redtrack':'-track'):(custom.paint?'-street':''));const url=def.id==='baseline'&&type==='top'&&!edition?'zhiga.png':`assets/cars/${id}${def.police?'':edition}-${type}.webp`;if(!this.cache.has(url)){const im=AssetImages.image(url);this.cache.set(url,im);}return this.cache.get(url);},
+ sprite(def,custom={}){return this.image(def,'top',custom);},
+ drawVehicle(g,v,def,custom={},scale=this.visualScale()){const im=this.sprite(def,custom);if(!im.complete||!im.naturalWidth)return;g.save();g.translate(v.x,v.y);g.rotate(v.angle-Math.PI/2);const h=carH()*scale,w=h*im.naturalWidth/im.naturalHeight;g.drawImage(im,-w/2,-h/2,w,h);g.restore();},
+ preview(canvas,def,custom={}){const im=this.image(def,'preview',custom);const draw=()=>{if(!canvas.isConnected)return;const g=canvas.getContext('2d');g.clearRect(0,0,canvas.width,canvas.height);const z=Math.min(canvas.width/im.naturalWidth,canvas.height/im.naturalHeight)*.94;g.drawImage(im,(canvas.width-im.naturalWidth*z)/2,(canvas.height-im.naturalHeight*z)/2,im.naturalWidth*z,im.naturalHeight*z);};if(im.complete&&im.naturalWidth)requestAnimationFrame(draw);else im.addEventListener('load',draw,{once:true});},
+ policePreview(canvas,level){this.preview(canvas,{police:Math.max(1,Math.min(5,level))});}
+};
+carImg.src='zhiga.png';

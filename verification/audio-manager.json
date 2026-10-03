@@ -1,0 +1,43 @@
+{
+  "decoded": 3,
+  "fetches": 3,
+  "peakSfx": 4,
+  "results": [
+    {
+      "name": "all",
+      "newLoopSources": 0,
+      "newSfxSources": 1,
+      "peakSfx": 1
+    },
+    {
+      "name": "engine",
+      "newLoopSources": 0,
+      "newSfxSources": 0,
+      "peakSfx": 1
+    },
+    {
+      "name": "engine+sfx",
+      "newLoopSources": 0,
+      "newSfxSources": 1,
+      "peakSfx": 1
+    },
+    {
+      "name": "sfx",
+      "newLoopSources": 0,
+      "newSfxSources": 1,
+      "peakSfx": 1
+    },
+    {
+      "name": "drift",
+      "newLoopSources": 0,
+      "newSfxSources": 0,
+      "peakSfx": 1
+    },
+    {
+      "name": "off",
+      "newLoopSources": 0,
+      "newSfxSources": 0,
+      "peakSfx": 1
+    }
+  ]
+}

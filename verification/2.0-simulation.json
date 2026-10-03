@@ -1,0 +1,538 @@
+[
+  {
+    "name": "isakiy loaded",
+    "pass": true
+  },
+  {
+    "name": "isakiy spawn not wall",
+    "pass": true
+  },
+  {
+    "name": "isakiy finite movement",
+    "pass": true
+  },
+  {
+    "name": "autodrom loaded",
+    "pass": true
+  },
+  {
+    "name": "autodrom spawn not wall",
+    "pass": true
+  },
+  {
+    "name": "autodrom finite movement",
+    "pass": true
+  },
+  {
+    "name": "autodrom NPC road clearance",
+    "pass": true,
+    "detail": {
+      "offroad": 0,
+      "count": 3
+    }
+  },
+  {
+    "name": "green loaded",
+    "pass": true
+  },
+  {
+    "name": "green spawn not wall",
+    "pass": true
+  },
+  {
+    "name": "green finite movement",
+    "pass": true
+  },
+  {
+    "name": "igor loaded",
+    "pass": true
+  },
+  {
+    "name": "igor spawn not wall",
+    "pass": true
+  },
+  {
+    "name": "igor finite movement",
+    "pass": true
+  },
+  {
+    "name": "lega loaded",
+    "pass": true
+  },
+  {
+    "name": "lega spawn not wall",
+    "pass": true
+  },
+  {
+    "name": "lega finite movement",
+    "pass": true
+  },
+  {
+    "name": "quarry loaded",
+    "pass": true
+  },
+  {
+    "name": "quarry spawn not wall",
+    "pass": true
+  },
+  {
+    "name": "quarry finite movement",
+    "pass": true
+  },
+  {
+    "name": "quarry NPC road clearance",
+    "pass": true,
+    "detail": {
+      "offroad": 0,
+      "count": 3
+    }
+  },
+  {
+    "name": "shop loaded",
+    "pass": true
+  },
+  {
+    "name": "shop spawn not wall",
+    "pass": true
+  },
+  {
+    "name": "shop finite movement",
+    "pass": true
+  },
+  {
+    "name": "shop NPC road clearance",
+    "pass": true,
+    "detail": {
+      "offroad": 0,
+      "count": 3
+    }
+  },
+  {
+    "name": "eco loaded",
+    "pass": true
+  },
+  {
+    "name": "eco spawn not wall",
+    "pass": true
+  },
+  {
+    "name": "eco finite movement",
+    "pass": true
+  },
+  {
+    "name": "eco NPC road clearance",
+    "pass": true,
+    "detail": {
+      "offroad": 0,
+      "count": 3
+    }
+  },
+  {
+    "name": "wheel loaded",
+    "pass": true
+  },
+  {
+    "name": "wheel spawn not wall",
+    "pass": true
+  },
+  {
+    "name": "wheel finite movement",
+    "pass": true
+  },
+  {
+    "name": "wheel NPC road clearance",
+    "pass": true,
+    "detail": {
+      "offroad": 0,
+      "count": 1
+    }
+  },
+  {
+    "name": "Five distinct services",
+    "pass": true
+  },
+  {
+    "name": "baseline new cosmetic 2-0-0-preview",
+    "pass": true
+  },
+  {
+    "name": "baseline new cosmetic 2-0-0-top",
+    "pass": true
+  },
+  {
+    "name": "baseline new cosmetic 2-0-1-preview",
+    "pass": true
+  },
+  {
+    "name": "baseline new cosmetic 2-0-1-top",
+    "pass": true
+  },
+  {
+    "name": "baseline new cosmetic 2-1-0-preview",
+    "pass": true
+  },
+  {
+    "name": "baseline new cosmetic 2-1-0-top",
+    "pass": true
+  },
+  {
+    "name": "baseline new cosmetic 2-1-1-preview",
+    "pass": true
+  },
+  {
+    "name": "baseline new cosmetic 2-1-1-top",
+    "pass": true
+  },
+  {
+    "name": "baseline new cosmetic 2-2-0-preview",
+    "pass": true
+  },
+  {
+    "name": "baseline new cosmetic 2-2-0-top",
+    "pass": true
+  },
+  {
+    "name": "baseline new cosmetic 2-2-1-preview",
+    "pass": true
+  },
+  {
+    "name": "baseline new cosmetic 2-2-1-top",
+    "pass": true
+  },
+  {
+    "name": "baseline new cosmetic 2-3-0-preview",
+    "pass": true
+  },
+  {
+    "name": "baseline new cosmetic 2-3-0-top",
+    "pass": true
+  },
+  {
+    "name": "baseline new cosmetic 2-3-1-preview",
+    "pass": true
+  },
+  {
+    "name": "baseline new cosmetic 2-3-1-top",
+    "pass": true
+  },
+  {
+    "name": "baseline new cosmetic 3-0-0-preview",
+    "pass": true
+  },
+  {
+    "name": "baseline new cosmetic 3-0-0-top",
+    "pass": true
+  },
+  {
+    "name": "baseline new cosmetic 3-0-1-preview",
+    "pass": true
+  },
+  {
+    "name": "baseline new cosmetic 3-0-1-top",
+    "pass": true
+  },
+  {
+    "name": "baseline new cosmetic 3-1-0-preview",
+    "pass": true
+  },
+  {
+    "name": "baseline new cosmetic 3-1-0-top",
+    "pass": true
+  },
+  {
+    "name": "baseline new cosmetic 3-1-1-preview",
+    "pass": true
+  },
+  {
+    "name": "baseline new cosmetic 3-1-1-top",
+    "pass": true
+  },
+  {
+    "name": "baseline new cosmetic 3-2-0-preview",
+    "pass": true
+  },
+  {
+    "name": "baseline new cosmetic 3-2-0-top",
+    "pass": true
+  },
+  {
+    "name": "baseline new cosmetic 3-2-1-preview",
+    "pass": true
+  },
+  {
+    "name": "baseline new cosmetic 3-2-1-top",
+    "pass": true
+  },
+  {
+    "name": "baseline new cosmetic 3-3-0-preview",
+    "pass": true
+  },
+  {
+    "name": "baseline new cosmetic 3-3-0-top",
+    "pass": true
+  },
+  {
+    "name": "baseline new cosmetic 3-3-1-preview",
+    "pass": true
+  },
+  {
+    "name": "baseline new cosmetic 3-3-1-top",
+    "pass": true
+  },
+  {
+    "name": "silvia new cosmetic 2-0-0-preview",
+    "pass": true
+  },
+  {
+    "name": "silvia new cosmetic 2-0-0-top",
+    "pass": true
+  },
+  {
+    "name": "silvia new cosmetic 2-0-1-preview",
+    "pass": true
+  },
+  {
+    "name": "silvia new cosmetic 2-0-1-top",
+    "pass": true
+  },
+  {
+    "name": "silvia new cosmetic 2-1-0-preview",
+    "pass": true
+  },
+  {
+    "name": "silvia new cosmetic 2-1-0-top",
+    "pass": true
+  },
+  {
+    "name": "silvia new cosmetic 2-1-1-preview",
+    "pass": true
+  },
+  {
+    "name": "silvia new cosmetic 2-1-1-top",
+    "pass": true
+  },
+  {
+    "name": "silvia new cosmetic 2-2-0-preview",
+    "pass": true
+  },
+  {
+    "name": "silvia new cosmetic 2-2-0-top",
+    "pass": true
+  },
+  {
+    "name": "silvia new cosmetic 2-2-1-preview",
+    "pass": true
+  },
+  {
+    "name": "silvia new cosmetic 2-2-1-top",
+    "pass": true
+  },
+  {
+    "name": "silvia new cosmetic 2-3-0-preview",
+    "pass": true
+  },
+  {
+    "name": "silvia new cosmetic 2-3-0-top",
+    "pass": true
+  },
+  {
+    "name": "silvia new cosmetic 2-3-1-preview",
+    "pass": true
+  },
+  {
+    "name": "silvia new cosmetic 2-3-1-top",
+    "pass": true
+  },
+  {
+    "name": "silvia new cosmetic 3-0-0-preview",
+    "pass": true
+  },
+  {
+    "name": "silvia new cosmetic 3-0-0-top",
+    "pass": true
+  },
+  {
+    "name": "silvia new cosmetic 3-0-1-preview",
+    "pass": true
+  },
+  {
+    "name": "silvia new cosmetic 3-0-1-top",
+    "pass": true
+  },
+  {
+    "name": "silvia new cosmetic 3-1-0-preview",
+    "pass": true
+  },
+  {
+    "name": "silvia new cosmetic 3-1-0-top",
+    "pass": true
+  },
+  {
+    "name": "silvia new cosmetic 3-1-1-preview",
+    "pass": true
+  },
+  {
+    "name": "silvia new cosmetic 3-1-1-top",
+    "pass": true
+  },
+  {
+    "name": "silvia new cosmetic 3-2-0-preview",
+    "pass": true
+  },
+  {
+    "name": "silvia new cosmetic 3-2-0-top",
+    "pass": true
+  },
+  {
+    "name": "silvia new cosmetic 3-2-1-preview",
+    "pass": true
+  },
+  {
+    "name": "silvia new cosmetic 3-2-1-top",
+    "pass": true
+  },
+  {
+    "name": "silvia new cosmetic 3-3-0-preview",
+    "pass": true
+  },
+  {
+    "name": "silvia new cosmetic 3-3-0-top",
+    "pass": true
+  },
+  {
+    "name": "silvia new cosmetic 3-3-1-preview",
+    "pass": true
+  },
+  {
+    "name": "silvia new cosmetic 3-3-1-top",
+    "pass": true
+  },
+  {
+    "name": "rare new cosmetic 2-0-0-preview",
+    "pass": true
+  },
+  {
+    "name": "rare new cosmetic 2-0-0-top",
+    "pass": true
+  },
+  {
+    "name": "rare new cosmetic 2-0-1-preview",
+    "pass": true
+  },
+  {
+    "name": "rare new cosmetic 2-0-1-top",
+    "pass": true
+  },
+  {
+    "name": "rare new cosmetic 2-1-0-preview",
+    "pass": true
+  },
+  {
+    "name": "rare new cosmetic 2-1-0-top",
+    "pass": true
+  },
+  {
+    "name": "rare new cosmetic 2-1-1-preview",
+    "pass": true
+  },
+  {
+    "name": "rare new cosmetic 2-1-1-top",
+    "pass": true
+  },
+  {
+    "name": "rare new cosmetic 2-2-0-preview",
+    "pass": true
+  },
+  {
+    "name": "rare new cosmetic 2-2-0-top",
+    "pass": true
+  },
+  {
+    "name": "rare new cosmetic 2-2-1-preview",
+    "pass": true
+  },
+  {
+    "name": "rare new cosmetic 2-2-1-top",
+    "pass": true
+  },
+  {
+    "name": "rare new cosmetic 2-3-0-preview",
+    "pass": true
+  },
+  {
+    "name": "rare new cosmetic 2-3-0-top",
+    "pass": true
+  },
+  {
+    "name": "rare new cosmetic 2-3-1-preview",
+    "pass": true
+  },
+  {
+    "name": "rare new cosmetic 2-3-1-top",
+    "pass": true
+  },
+  {
+    "name": "rare new cosmetic 3-0-0-preview",
+    "pass": true
+  },
+  {
+    "name": "rare new cosmetic 3-0-0-top",
+    "pass": true
+  },
+  {
+    "name": "rare new cosmetic 3-0-1-preview",
+    "pass": true
+  },
+  {
+    "name": "rare new cosmetic 3-0-1-top",
+    "pass": true
+  },
+  {
+    "name": "rare new cosmetic 3-1-0-preview",
+    "pass": true
+  },
+  {
+    "name": "rare new cosmetic 3-1-0-top",
+    "pass": true
+  },
+  {
+    "name": "rare new cosmetic 3-1-1-preview",
+    "pass": true
+  },
+  {
+    "name": "rare new cosmetic 3-1-1-top",
+    "pass": true
+  },
+  {
+    "name": "rare new cosmetic 3-2-0-preview",
+    "pass": true
+  },
+  {
+    "name": "rare new cosmetic 3-2-0-top",
+    "pass": true
+  },
+  {
+    "name": "rare new cosmetic 3-2-1-preview",
+    "pass": true
+  },
+  {
+    "name": "rare new cosmetic 3-2-1-top",
+    "pass": true
+  },
+  {
+    "name": "rare new cosmetic 3-3-0-preview",
+    "pass": true
+  },
+  {
+    "name": "rare new cosmetic 3-3-0-top",
+    "pass": true
+  },
+  {
+    "name": "rare new cosmetic 3-3-1-preview",
+    "pass": true
+  },
+  {
+    "name": "rare new cosmetic 3-3-1-top",
+    "pass": true
+  }
+]

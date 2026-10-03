@@ -1,0 +1,12 @@
+{
+  "beforeMs": {
+    "driveMs": 167.38599999999997,
+    "safeMs": 635.2604
+  },
+  "afterMs": {
+    "driveMs": 133.3351,
+    "safeMs": 268.0573
+  },
+  "identicalTrajectory": true,
+  "phoneFPSMeasured": false
+}

@@ -1,0 +1,79 @@
+{
+  "transitions": 12,
+  "fetches": 4,
+  "sizes": [
+    {
+      "images": 23,
+      "surfaces": 1,
+      "navigation": 1,
+      "traffic": 1
+    },
+    {
+      "images": 24,
+      "surfaces": 2,
+      "navigation": 2,
+      "traffic": 2
+    },
+    {
+      "images": 25,
+      "surfaces": 3,
+      "navigation": 3,
+      "traffic": 3
+    },
+    {
+      "images": 25,
+      "surfaces": 3,
+      "navigation": 3,
+      "traffic": 3
+    },
+    {
+      "images": 25,
+      "surfaces": 3,
+      "navigation": 3,
+      "traffic": 3
+    },
+    {
+      "images": 25,
+      "surfaces": 3,
+      "navigation": 3,
+      "traffic": 3
+    },
+    {
+      "images": 25,
+      "surfaces": 3,
+      "navigation": 3,
+      "traffic": 3
+    },
+    {
+      "images": 25,
+      "surfaces": 3,
+      "navigation": 3,
+      "traffic": 3
+    },
+    {
+      "images": 25,
+      "surfaces": 3,
+      "navigation": 3,
+      "traffic": 3
+    },
+    {
+      "images": 25,
+      "surfaces": 3,
+      "navigation": 3,
+      "traffic": 3
+    },
+    {
+      "images": 25,
+      "surfaces": 3,
+      "navigation": 3,
+      "traffic": 3
+    },
+    {
+      "images": 25,
+      "surfaces": 3,
+      "navigation": 3,
+      "traffic": 3
+    }
+  ],
+  "pass": true
+}

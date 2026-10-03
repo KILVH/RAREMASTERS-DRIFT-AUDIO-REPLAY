@@ -1,0 +1,71 @@
+[
+  {
+    "test": "Source unchanged zhiga.png",
+    "pass": true
+  },
+  {
+    "test": "Source unchanged maps/autodrom/map.png",
+    "pass": true
+  },
+  {
+    "test": "Source unchanged maps/autodrom/map_collision.png",
+    "pass": true
+  },
+  {
+    "test": "Source unchanged maps/isakiy/track.png",
+    "pass": true
+  },
+  {
+    "test": "Source unchanged maps/isakiy/collision.png",
+    "pass": true
+  },
+  {
+    "test": "Source unchanged maps/green/collision.png",
+    "pass": true
+  },
+  {
+    "test": "Exact surface every pixel isakiy",
+    "pass": true,
+    "pixels": 25172992
+  },
+  {
+    "test": "Exact surface every pixel autodrom",
+    "pass": true,
+    "pixels": 67026944
+  },
+  {
+    "test": "Exact surface every pixel green",
+    "pass": true,
+    "pixels": 14075904
+  },
+  {
+    "test": "Exact surface every pixel igor",
+    "pass": true,
+    "pixels": 1327104
+  },
+  {
+    "test": "Exact surface every pixel lega",
+    "pass": true,
+    "pixels": 1327104
+  },
+  {
+    "test": "Exact surface every pixel quarry",
+    "pass": true,
+    "pixels": 1327104
+  },
+  {
+    "test": "Exact surface every pixel shop",
+    "pass": true,
+    "pixels": 1681920
+  },
+  {
+    "test": "Exact surface every pixel eco",
+    "pass": true,
+    "pixels": 1503744
+  },
+  {
+    "test": "Exact surface every pixel wheel",
+    "pass": true,
+    "pixels": 2468352
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "id": "isakiy",
+    "direction": "forward",
+    "start": 3,
+    "spawned": 3,
+    "removed": 3,
+    "wall": 0,
+    "pass": true
+  },
+  {
+    "id": "green",
+    "direction": "forward",
+    "start": 3,
+    "spawned": 3,
+    "removed": 3,
+    "wall": 0,
+    "pass": true
+  },
+  {
+    "id": "green",
+    "direction": "reverse",
+    "start": 3,
+    "spawned": 3,
+    "removed": 3,
+    "wall": 0,
+    "pass": true
+  },
+  {
+    "id": "igor",
+    "direction": "forward",
+    "start": 2,
+    "spawned": 3,
+    "removed": 2,
+    "wall": 0,
+    "pass": true
+  },
+  {
+    "id": "igor",
+    "direction": "reverse",
+    "start": 3,
+    "spawned": 3,
+    "removed": 3,
+    "wall": 0,
+    "pass": true
+  },
+  {
+    "id": "lega",
+    "direction": "forward",
+    "start": 2,
+    "spawned": 6,
+    "removed": 5,
+    "wall": 0,
+    "pass": true
+  },
+  {
+    "id": "lega",
+    "direction": "reverse",
+    "start": 3,
+    "spawned": 5,
+    "removed": 6,
+    "wall": 0,
+    "pass": true
+  }
+]

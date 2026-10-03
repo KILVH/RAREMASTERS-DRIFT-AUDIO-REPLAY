@@ -1,0 +1,106 @@
+[
+  {
+    "name": "No audio without purchase",
+    "pass": true
+  },
+  {
+    "name": "No install without purchase",
+    "pass": true
+  },
+  {
+    "name": "Insufficient purchase atomic",
+    "pass": true
+  },
+  {
+    "name": "STANDARD charged once",
+    "pass": true
+  },
+  {
+    "name": "20 unique valid tracks",
+    "pass": true
+  },
+  {
+    "name": "Bought but uninstalled locked",
+    "pass": true
+  },
+  {
+    "name": "Install charges once",
+    "pass": true
+  },
+  {
+    "name": "STANDARD exposes only selection",
+    "pass": true
+  },
+  {
+    "name": "Cannot select locked track",
+    "pass": true
+  },
+  {
+    "name": "Random stays allowed with no consecutive repeat",
+    "pass": true
+  },
+  {
+    "name": "Next previous roundtrip",
+    "pass": true
+  },
+  {
+    "name": "PRO upgrade charged, install preserved",
+    "pass": true
+  },
+  {
+    "name": "PRO entire catalog",
+    "pass": true
+  },
+  {
+    "name": "New police amounts",
+    "pass": true
+  },
+  {
+    "name": "Escape fine exactly 1000",
+    "pass": true
+  },
+  {
+    "name": "Starter never impounded",
+    "pass": true
+  },
+  {
+    "name": "2-second stop tolerated",
+    "pass": true
+  },
+  {
+    "name": "3-second stop invalidates",
+    "pass": true
+  },
+  {
+    "name": "Brief offtrack tolerated",
+    "pass": true
+  },
+  {
+    "name": "Full sustained offtrack invalidates",
+    "pass": true
+  },
+  {
+    "name": "Ghost is nonphysical and unpenalized",
+    "pass": true
+  },
+  {
+    "name": "Challenge below5000 denied",
+    "pass": true
+  },
+  {
+    "name": "Challenge starts at5000",
+    "pass": true
+  },
+  {
+    "name": "First leg waits for second",
+    "pass": true
+  },
+  {
+    "name": "Second leg flips roles",
+    "pass": true
+  },
+  {
+    "name": "Winner from both measured legs",
+    "pass": true
+  }
+]
